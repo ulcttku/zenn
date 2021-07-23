@@ -90,7 +90,7 @@ https://www.npmjs.com/package/aikagi
 ※この実装には少し問題点があるのですが、後ほど取り上げます。
 
 
-## CamelCase → SnakeCase
+# CamelCase → SnakeCase
 
 いろいろ試行錯誤したので、試した方針を1つひとつ解説していこうと思います。
 
