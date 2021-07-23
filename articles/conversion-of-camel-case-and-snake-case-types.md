@@ -3,7 +3,7 @@ title: "CamelCase な型と SnakeCase な型の変換"
 emoji: "🔑"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["TypeScript"]
-published: false
+published: true
 ---
 
 TypeScript で、(Lower)CamelCase な型を SnakeCase な型に、SnakeCase な型を(Lower)CamelCase な型に変換する型を作りました。
