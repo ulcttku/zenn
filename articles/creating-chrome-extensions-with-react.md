@@ -3,7 +3,7 @@ title: "React で作る Chrome 拡張機能"
 emoji: "🧩"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["React", "TypeScript", "Chrome拡張機能"]
-published: false
+published: true
 ---
 
 Chrome 拡張機能を使うことで、ページ内に新しい機能を追加したり、情報を取得したりと色々できます。
