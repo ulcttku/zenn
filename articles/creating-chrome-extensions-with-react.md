@@ -17,7 +17,7 @@ Chrome 拡張機能を使うことで、ページ内に新しい機能を追加�
 # TL;DR
 この記事で作成したプログラムは以下のリポジトリに置いてあります。
 
-[ulcttku/sample_chrome_extension_with_react](https://diffhub.com/ulcttku/sample_chrome_extension_with_react)
+[ulcttku/sample_chrome_extension_with_react](https://github.com/ulcttku/sample_chrome_extension_with_react)
 
 もしよければ PR などいただければ幸いです。
 
