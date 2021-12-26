@@ -17,7 +17,7 @@ Chrome 拡張機能を使うことで、ページ内に新しい機能を追加�
 # TL;DR
 この記事で作成したプログラムは以下のリポジトリに置いてあります。
 
-[ulcttku/sample_chrome_extension_with_react](https://github.com/ulcttku/sample_chrome_extension_with_react)
+[ulcttku/sample_chrome_extension_with_react](https://diffhub.com/ulcttku/sample_chrome_extension_with_react)
 
 もしよければ PR などいただければ幸いです。
 
@@ -101,7 +101,7 @@ App.test.tsx  index.css  logo.svg   reportWebVitals.ts
 
 まずは、`manifest.json` に `default_popup` を追加します。
 
-```git:manifest.json
+```diff json:manifest.json
  {
    "manifest_version": 3,
    "name": "Sample App",
@@ -119,7 +119,7 @@ App.test.tsx  index.css  logo.svg   reportWebVitals.ts
 React のビルドに使用している `react-script` はビルド結果を `index.html` から変更できないので、`popup.html` を作成するには少し工夫が必要です。
 今後、オプションページを使うかもしれない事も考えて、以下のように書き換えていきます。
 
-```git:package.json
+```diff json:package.json
    "scripts": {
      "start": "react-scripts start",
 -    "build": "react-scripts build",
@@ -130,7 +130,7 @@ React のビルドに使用している `react-script` はビルド結果を `in
    },
 ```
 
-```git:src/index.tsx
+```diff tsx:src/index.tsx
  ReactDOM.render(
    <React.StrictMode>
      <App />
@@ -193,7 +193,7 @@ ID は環境に変わると思うので気にしなくて大丈夫です。
 
 まずは、`src/index.tsx` を変更します。
 
-```git:src/index.tsx
+```diff tsx:src/index.tsx
  import React from 'react';
  import ReactDOM from 'react-dom';
  import './index.css';
@@ -247,7 +247,7 @@ Sample App のカードの右下にある更新マークをクリックします
 
 まずは、`manifest.json` に `options_page` を追加します。
 
-```git:manifest.json
+```diff json:manifest.json
  {
    "manifest_version": 3,
    "name": "Sample App",
@@ -265,7 +265,7 @@ Sample App のカードの右下にある更新マークをクリックします
 
 次に、`package.json` を変更します。
 
-```git:package.json
+```diff json:package.json
    "scripts": {
      "start": "react-scripts start",
 -    "build": "react-scripts build && yarn rename:popup",
@@ -279,7 +279,7 @@ Sample App のカードの右下にある更新マークをクリックします
 
 最後に `src/index.tsx` で `options` にもレンダーするように変更しておきます。
 
-```git:src/index.tsx
+```difftsx :src/index.tsx
  import React from 'react';
  import ReactDOM from 'react-dom';
  import './index.css';
@@ -338,7 +338,7 @@ favicon.ico          logo192.png  manifest.json  popup.html    static
 
 まずは、`src/index.tsx` を変更します。
 
-```git:src/index.tsx
+```diff tsx:src/index.tsx
  import React from 'react';
  import ReactDOM from 'react-dom';
  import './index.css';
@@ -382,7 +382,7 @@ export default Options;
 ### 準備
 まずは、オプションページで設定した内容を保存するために、`chrome.storage` を使えるように permissions を設定します。
 
-```git:public/manifest.json
+```diff json:public/manifest.json
      "default_popup": "popup.html"
    },
    "description": "React で Chrome 拡張機能を作るためのサンプル",
@@ -477,7 +477,7 @@ export default Popup;
 また、後述する `webpack.content_scripts.config.ts` をうまく読み込ませるために `ts-node` の設定もします。
 詳しい `ts-node` の設定については [Configuration Languages | webpack](https://webpack.js.org/configuration/configuration-languages/) をご参照ください。
 
-```git:tsconfig.json
+```diff json:tsconfig.json
    },
    "include": [
      "src"
@@ -554,7 +554,7 @@ module.exports = {
 
 次に、`package.json` を変更します。
 
-```git:package.json
+```diff json:package.json
    "scripts": {
      "start": "react-scripts start",
 -    "build": "react-scripts build && yarn rename:popup && yarn rename:options",
@@ -629,7 +629,7 @@ Done in 11.76s.
 まずは、`public/manifest.json` に `content_script.js` をすべてのサイトで使用できるように設定します。
 次に、あとで必要になるので、`permissions` に `tabs` を追加しておきます。
 
-```git:public/manifest.json
+```diff json:public/manifest.json
      "default_title": "サンプルアプリ",
      "default_popup": "popup.html"
    },
